@@ -227,7 +227,7 @@ mean_exp_by_time_sex <- dat %>%
 ggplot(mean_exp_by_time_sex, aes(time, mean_exp, color = sex)) +
   geom_line() +
   facet_wrap(~gene) +
-  scale_color_brewer('Dark2')
+  scale_color_brewer(palette = 'Dark2')
   labs(x = 'Time',
        y = 'Mean log2 Expression')
 
@@ -244,7 +244,7 @@ mean_exp_by_chromosome <- dat %>%
 mean_exp_by_chromosome |>
 ggplot(aes(time, mean_exp)) +
   geom_line() +
-  facet_wrap(~chromosome_name)
+  facet_wrap(~chromosome_name, scales = 'free_y')
 
 ```
 
